@@ -5,7 +5,10 @@ from main import views
 from .models import Device
 from .views import DeviceListView
 
+from django.conf.urls import url
+
 from .views import SwitchListView
+from .views import Switch2ListView
 from .views import BoardListView
 from .views import PruebaListView
 from .views import PuzzleListView
@@ -18,6 +21,7 @@ urlpatterns = [
     path('puzzle/', PuzzleListView.as_view(), name="Puzzle"),
     path('prueba/', PruebaListView.as_view(), name="Prueba"),    
     path('devices/', views.DeviceList.as_view(), name='device-list'),
+    path('switch2/', Switch2ListView.as_view(), name="Switch2"),
     path('devices/<int:pk>/', views.DeviceDetail.as_view(), name='device-detail'),
     path('users/', views.UserList.as_view(), name='user-list'),
     path('users/<int:pk>', views.UserDetail.as_view(), name='user-detail'),
