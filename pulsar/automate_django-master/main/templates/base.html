@@ -17,9 +17,9 @@
         <div class="container-fluid">
           <a class="navbar-brand" href="{% url 'home' %}">Puls.ar</a>
           
-         
+          <ul class="navbar-nav mx-auto">
+
             {% if user.is_authenticated %}
-            <ul class="navbar-nav mx-auto">
             <li>  <a class="nav-link" href="{% url 'logout' %}">Cerrar Sesión</a>
             </li>
           </li>
