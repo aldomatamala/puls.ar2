@@ -97,8 +97,8 @@ text-align: center;
       </div>
 
       <div class="videoWrapper">
-          <video autoplay="" loop="" muted="" class="custom-video" poster="static/videos/792bd98f3e617786c850493560e11c45.jpg">
-              <source src="static/videos/814dc43e870597176cad645798825c03.mp4" type="video/mp4">
+          <video autoplay="" loop="" muted="" class="custom-video" poster="static/videos/poster.jpg">
+              <source src="static/videos/video.mp4" type="video/mp4">
 
               Your browser does not support the video tag.
           </video>
@@ -106,38 +106,65 @@ text-align: center;
 
       <div class="overlay"></div>
   </section>
+  <section class="section-padding" id="portfolio">
+    <div class="container">
+        <div class="row">
+
+            <div class="col-12">
+                <h2 class="mb-5 text-center" data-aos="fade-up">Instrucciones</h2>
+            </div>
+
+            <div class="col-lg-6 col-12">
+                <div class="portfolio-thumb mb-5" data-aos="fade-up">
+                    <a href="static/images/pantalla.jpg" class="image-popup">
+                        <img src="static/images/pantalla.jpg" class="img-fluid portfolio-image" alt="">
+                    </a>
+
+                    <div class="portfolio-info">                     
+                        <h4 class="portfolio-title mb-0">Paso 1</h4>
+
+                        <p class="text-danger">Iniciar sesion en dispositivo pantalla (PC / tablet / SmartTV) y abrir la actividad Rompecabezas</p>
+                    </div>
+                </div> 
+
+                <div class="portfolio-thumb" data-aos="fade-up">
+                    <a href="static/images/pulsadores.jpg" class="image-popup">
+                        <img src="static/images/pulsadores.jpg" class="img-fluid portfolio-image" alt="">
+                    </a>
+
+                    <div class="portfolio-info">                     
+                        <h4 class="portfolio-title mb-0">Paso 2</h4>
+
+                        <p class="text-success">Iniciar sesion en dispositivos pulsadores (celulares o tablets) y abrir un pulsador </p>
+                    </div>
+                </div> 
+            </div>
+
+            <div class="col-lg-6 col-12">
+                <div class="portfolio-thumb mt-5 mt-lg-0 mb-5" data-aos="fade-up">
+                    <a href="static/images/pulsar.jpg" class="image-popup">
+                        <img src="static/images/pulsar.jpg" class="img-fluid portfolio-image" alt="">
+                    </a>
+
+                    <div class="portfolio-info">                     
+                        <h4 class="portfolio-title mb-0">Paso 3</h4>
+
+                        <p class="text-warning">Pulsar!</p>
+                    </div>
+                </div> 
+
+                
+                </div> 
+            </div>
+
+        </div>
+    </div>
+</section>
 
     <br>
     <div class="container h-100 w-100">
       <!-- <h4>{{ request.user }}</h4> -->
-      {% if not user.is_authenticated %}
-      <p>Please login</p>
-      {% else %}
-      {% if devices %}
-      <table style="width:30%">
-        <tr>
-          <th>Name</th>
-          <th>Status</th>    
-        </tr>
-        {% for device in devices %}
-        <tr>
-          <td>{{ device.name }}</td>
-          <td>
-            <button type="button" 
-                    id='{{device.name}}'
-                    value="{{device.status|lower}}"
-                    onclick="send('{{device.name}}');vibrate(1000);"
-                    class="btn btn-primary"
-                    >{{device.status | lower}}</button>
-            </button>
-          </td>
-        </tr>
-        {% endfor %}
-      </table>
-      {% else %}
-      <p>There are no devices in the database.</p>
-      {% endif %}
-      {% endif %}
+     
       <br>
       <div role="alert" aria-live="assertive" aria-atomic="true" class="toast">
           <div class="toast-header">

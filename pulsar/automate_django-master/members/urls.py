@@ -11,3 +11,4 @@ urlpatterns = [
     path('password_success', views.password_success, name="password_success"),
 
 ]
+ 
