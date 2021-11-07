@@ -97,6 +97,16 @@ class UserList(generics.ListAPIView):
     queryset = User.objects.all()
     serializer_class = UserSerializer
 
+class Caro2ListView(ListView):
+    model = Device
+    context_object_name = 'devices'
+    # queryset = Device.objects.all()
+    template_name = 'caro2.html'
+
+    def get_queryset(self):
+        if(self.request.user.is_authenticated):
+            return Device.objects.filter(owner=self.request.user)    
+
 
 class UserDetail(generics.RetrieveAPIView):
     queryset = User.objects.all()

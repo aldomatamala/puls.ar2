@@ -12,12 +12,14 @@ from .views import Switch2ListView
 from .views import BoardListView
 from .views import PruebaListView
 from .views import PuzzleListView
+from .views import Caro2ListView
 
 
 urlpatterns = [
     path('', DeviceListView.as_view(), name="home"),
     path('switch/', SwitchListView.as_view(), name="Switch"),
     path('board/', BoardListView.as_view(), name="Board"),
+    path('caro2/', Caro2ListView.as_view(), name="caro2"),
     path('puzzle/', PuzzleListView.as_view(), name="Puzzle"),
     path('prueba/', PruebaListView.as_view(), name="Prueba"),    
     path('devices/', views.DeviceList.as_view(), name='device-list'),
